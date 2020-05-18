@@ -1,4 +1,4 @@
 applicationEnvironmentVariables:
-    - TZ: 'America/Toronto'
+    - TZ: 'Africa/Johannesburg'
     - DNSMASQ_LISTENING: 'eth0'
     - INTERFACE: 'eth0'
