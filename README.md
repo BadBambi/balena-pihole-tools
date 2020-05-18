@@ -58,3 +58,26 @@ Kyle Harding <https://klutchell.dev>
 ## License
 
 [MIT License](./LICENSE)
+
+#Looking at the following additions
+##Dark theme
+* <https://github.com/lkd70/PiHole-Dark>
+A Dark theme for the pihole admin page. Contribute to lkd70/PiHole-Dark development by creating an account on GitHub.
+
+Easy Install
+Simple install instructions for those of you who are too lazy to go to the GitHub page.
+
+Download the install.sh file 352 to this directory: /var/www/html/
+open a terminal ( Ctrl + Alt + T )
+type: cd /var/www/html
+type: sudo su (type your password if promoted)
+type: wget https://raw.githubusercontent.com/lkd70/PiHole-Dark/master/install.sh
+type: chmod +x install.sh
+type: ./install.sh
+Follow the onscreen instructions
+
+#Speedtest mod
+* <https://github.com/arevindh/pihole-speedtest/wiki/Installing-Speedtest-Mod>
+
+#SSL cert and domain selection
+* <https://discourse.pi-hole.net/t/enabling-https-for-your-pi-hole-web-interface/5771>
