@@ -1,27 +1,12 @@
 #!/bin/bash
-while true; do
-    read -p "Create a backup of the current files? (Y/n): " yn
-    case $yn in
-        [Yy]* ) 
-            cp -f admin/style/vendor/AdminLTE.min.css admin/style/vendor/AdminLTE.min.bkp.css  # Backup StyleSheet...
-            echo "Backup completed!"
-			break ;;
-        [Nn]* ) break;;
-        * ) echo "Please answer Yes (y) or No (n).";;
-    esac
-done
-while true; do
-    read -p "Install LKD70's Dark Theme now? (Y/n): " yn
-    case $yn in
-        [Yy]* ) 
-	    git clone https://github.com/lkd70/PiHole-Dark.git temp
-            rm -f admin/style/vendor/AdminLTE.min.css
-            cp temp/admin/style/vendor/AdminLTE.min.css admin/style/vendor/AdminLTE.min.css
-            cp temp/admin/style/vendor/AdminLTE.css admin/style/vendor/AdminLTE.css
-	    rm -rf temp/
-			break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer Yes (y) or No (n).";;
-    esac
-done
+echo "Creating a backup of the current files"
+    cp -f /var/www/html/admin/style/vendor/AdminLTE.min.css /var/www/html/admin/style/vendor/AdminLTE.min.bkp.css  # Backup StyleSheet...
+      echo "Backup completed!"
+
+echo "Installing LKD70's Dark Theme now"
+    git clone https://github.com/lkd70/PiHole-Dark.git temp
+        rm -f /var/www/html/admin/style/vendor/AdminLTE.min.css
+        cp /var/www/html/temp/admin/style/vendor/AdminLTE.min.css /var/www/html/admin/style/vendor/AdminLTE.min.css
+        cp /var/www/html/temp/admin/style/vendor/AdminLTE.css /var/www/html/admin/style/vendor/AdminLTE.css
+	    rm -rf /var/www/htmltemp/
 echo "All done!"

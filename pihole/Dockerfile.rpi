@@ -24,10 +24,9 @@ COPY init/ /etc/cont-init.d/
 RUN sed -i '/$AUTHORIZED_HOSTNAMES = array(/ a "balena-devices.com",' /var/www/html/admin/scripts/pi-hole/php/auth.php
 
 # Install Dark mode onto Pi-hole
-WORKDIR /var/www/html
-RUN wget https://raw.githubusercontent.com/lkd70/PiHole-Dark/master/install.sh
-RUN chmod +x install.sh
-RUN install.sh -Y
+#WORKDIR /var/www/html
+COPY install.sh /var/www/html
+RUN chmod +x /var/www/html/install.sh | /var/www/html/install.sh
 
 # https://serverfault.com/a/817791
 # force dnsmasq to bind only the interfaces it is listening on
