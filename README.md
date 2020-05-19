@@ -32,52 +32,47 @@ Device Variables apply to all services within the application, and can be applie
 |`DNS1`|`127.0.0.1#5053`|_(optional)_ Tell Pi-hole where to forward DNS requests that aren’t blocked. We’re using the [dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy) project here but you can specify your own.|
 |`DNS2`|`127.0.0.1#5053`|_(optional)_ Secondary DNS server - see above.|
 |`ServerIP`|`x.x.x.x`|_(recommended)_ Set to your server's LAN IP, used by web block modes and lighttpd bind address.|
+|`ServerPORT`|`xx`|_(optional)_ Set to your PiHole lighttpd bind port other than 80, used by web block modes and lighttpd bind port.|
+|`GIST`|`Gist URI`|_(optional)_ Where to backup your latest teleport files and then restore them as well.|
 
 ## Usage
 
 * <https://www.balena.io/blog/deploy-network-wide-ad-blocking-with-pi-hole-and-a-raspberry-pi/>
 * <https://github.com/DNSCrypt/dnscrypt-proxy/wiki>
+* <must try put some wiki up for this>
 
 ## Help
 
 If you're having trouble getting the project running, submit an issue or post on the forums at <https://forums.balena.io>.
 
-## Author
+## Original Author
 
 Kyle Harding <https://klutchell.dev>
-
-[Buy me a beer](https://kyles-tip-jar.myshopify.com/cart/31356319498262:1?channel=buy_button)
-
-[Buy me a craft beer](https://kyles-tip-jar.myshopify.com/cart/31356317859862:1?channel=buy_button)
 
 ## Acknowledgments
 
 * <https://github.com/pi-hole/docker-pi-hole/>
 * <https://github.com/DNSCrypt/dnscrypt-proxy>
+* <https://github.com/sivel/speedtest-cli>
+* <https://github.com/arevindh/pihole-speedtest/wiki/Installing-Speedtest-Mod>
 
-## License
-
-[MIT License](./LICENSE)
-
-#Looking at the following additions
-##Dark theme
+## Looking at the following additions for tools portion
+### Dark theme
 * <https://github.com/lkd70/PiHole-Dark>
 A Dark theme for the pihole admin page. Contribute to lkd70/PiHole-Dark development by creating an account on GitHub.
 
 Easy Install
 Simple install instructions for those of you who are too lazy to go to the GitHub page.
+Adapted the install file and saved within the container [install.sh](https://github.com/BadBambi/balena-pihole-tools/blob/master/pihole/install.sh)
 
-Download the install.sh file 352 to this directory: /var/www/html/
-open a terminal ( Ctrl + Alt + T )
-type: cd /var/www/html
-type: sudo su (type your password if promoted)
-type: wget https://raw.githubusercontent.com/lkd70/PiHole-Dark/master/install.sh
-type: chmod +x install.sh
-type: ./install.sh
-Follow the onscreen instructions
-
-#Speedtest mod
+### Speedtest mod
 * <https://github.com/arevindh/pihole-speedtest/wiki/Installing-Speedtest-Mod>
+or
+* <https://github.com/sivel/speedtest-cli>
 
-#SSL cert and domain selection
+### SSL cert and domain selection ###
 * <https://discourse.pi-hole.net/t/enabling-https-for-your-pi-hole-web-interface/5771>
+
+## License
+
+[MIT License](./LICENSE)
